@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio | GitHub Pages</title>
+    <meta name="description" content="Portfolio personal de [Tu Nombre] - Software Engineer">
+    <meta name="author" content="Tu Nombre">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#64748B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-border {
+            background: linear-gradient(45deg, #3B82F6, #06B6D4);
+            padding: 4px;
+            border-radius: 50%;
+        }
+        .profile-inner {
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item.active {
+            color: #3B82F6;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #3B82F6, #06B6D4);
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Main Container -->
+    <div class="max-w-md mx-auto bg-white min-h-screen relative">
+        <!-- Profile Section -->
+        <div class="pt-16 pb-8 text-center px-6">
+            <!-- Profile Image -->
+            <div class="profile-border inline-block mb-6">
+                <div class="profile-inner">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+                        <!-- Placeholder para tu foto -->
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                        <!-- Descomenta la línea de abajo y agrega tu foto -->
+                        <!-- <img src="tu-foto.jpg" alt="Tu Nombre" class="w-full h-full object-cover rounded-full"> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name and Title -->
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Tu Nombre</h1>
+            <p class="text-lg text-gray-500 mb-8">Software Engineering</p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-8">
+                <div class="stat-card text-center p-4 bg-white rounded-xl shadow-sm border">
+                    <div class="text-2xl font-bold text-gray-800">3</div>
+                    <div class="text-sm text-gray-500 leading-tight">Years of<br>work</div>
+                </div>
+                <div class="stat-card text-center p-4 bg-white rounded-xl shadow-sm border">
+                    <div class="text-2xl font-bold text-gray-800">+10</div>
+                    <div class="text-sm text-gray-500 leading-tight">Completed<br>projects</div>
+                </div>
+                <div class="stat-card text-center p-4 bg-white rounded-xl shadow-sm border">
+                    <div class="text-2xl font-bold text-gray-800">9</div>
+                    <div class="text-sm text-gray-500 leading-tight">Satisfied<br>customers</div>
+                </div>
+            </div>
+
+            <!-- Trabajemos Juntos Button -->
+            <div class="flex justify-center mb-6">
+                <button class="download-btn flex items-center space-x-3 px-8 py-4 text-white rounded-full font-medium">
+                    <span>Trabajemos juntos</span>
+                    <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-handshake text-sm"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-4 mb-6">
+                <button class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-linkedin-in text-gray-600"></i>
+                </button>
+                
+                <button class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-github text-gray-600"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="bg-gray-100 rounded-full p-1 mb-8">
+                <div class="grid grid-cols-4">
+                    <button class="nav-item active flex flex-col items-center space-y-1 py-3 px-2 rounded-full transition-all duration-300" data-section="about">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="text-xs font-medium">ABOUT</span>
+                    </button>
+                    <button class="nav-item flex flex-col items-center space-y-1 py-3 px-2 rounded-full transition-all duration-300 text-gray-500" data-section="projects">
+                        <i class="fas fa-th-large text-sm"></i>
+                        <span class="text-xs font-medium">PROJECTS</span>
+                    </button>
+                    <button class="nav-item flex flex-col items-center space-y-1 py-3 px-2 rounded-full transition-all duration-300 text-gray-500" data-section="skills">
+                        <i class="fas fa-code text-sm"></i>
+                        <span class="text-xs font-medium">SKILLS</span>
+                    </button>
+                    <button class="nav-item flex flex-col items-center space-y-1 py-3 px-2 rounded-full transition-all duration-300 text-gray-500" data-section="contact">
+                        <i class="fas fa-envelope text-sm"></i>
+                        <span class="text-xs font-medium">CONTACT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div id="content" class="px-6 pb-8">
+            <!-- About Section -->
+            <div id="about-section" class="content-section mb-12">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Sobre mí</h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed">
+                    <p>
+                        Soy un desarrollador de software apasionado con 3 años de experiencia creando soluciones innovadoras. Me especializo en desarrollo web y móvil, siempre buscando las mejores prácticas y tecnologías modernas.
+                    </p>
+                    <p>
+                        Mi enfoque se centra en crear aplicaciones funcionales, escalables y con una excelente experiencia de usuario. He trabajado con diversas tecnologías y frameworks, adaptándome constantemente a las nuevas tendencias del desarrollo.
+                    </p>
+                    <p>
+                        Me gusta colaborar en equipo y enfrentar desafíos técnicos complejos que me permitan seguir creciendo profesionalmente.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects-section" class="content-section mb-12 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Proyectos</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-xl border shadow-sm">
+                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 1</h3>
+                        <p class="text-gray-600 text-sm mb-3">Descripción del proyecto y tecnologías utilizadas.</p>
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded">React</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border shadow-sm">
+                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 2</h3>
+                        <p class="text-gray-600 text-sm mb-3">Descripción del proyecto y tecnologías utilizadas.</p>
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded">Vue.js</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-600 text-xs rounded">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border shadow-sm">
+                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 3</h3>
+                        <p class="text-gray-600 text-sm mb-3">Descripción del proyecto y tecnologías utilizadas.</p>
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-red-100 text-red-600 text-xs rounded">Angular</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-600 text-xs rounded">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills-section" class="content-section mb-12 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Habilidades</h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 font-medium">JavaScript</span>
+                            <span class="text-gray-500">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 font-medium">React</span>
+                            <span class="text-gray-500">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 font-medium">Node.js</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 font-medium">Python</span>
+                            <span class="text-gray-500">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700 font-medium">CSS/SASS</span>
+                            <span class="text-gray-500">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact-section" class="content-section mb-12 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Contacto</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3 p-4 bg-white rounded-xl border">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <span class="text-gray-700">tu.email@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-3 p-4 bg-white rounded-xl border">
+                        <i class="fas fa-phone text-blue-500"></i>
+                        <span class="text-gray-700">+34 123 456 789</span>
+                    </div>
+                    <div class="flex items-center space-x-3 p-4 bg-white rounded-xl border">
+                        <i class="fas fa-map-marker-alt text-blue-500"></i>
+                        <span class="text-gray-700">Tu ubicación</span>
+                    </div>
+                    <div class="flex items-center space-x-3 p-4 bg-white rounded-xl border">
+                        <i class="fab fa-whatsapp text-blue-500"></i>
+                        <span class="text-gray-700">+34 123 456 789</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trabajemos Juntos button functionality - Redirige a contact.html
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            window.location.href = 'contact.html';
+        });
+
+        // Social media links
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-linkedin-in')) {
+                    window.open('https://linkedin.com/in/tu-perfil', '_blank');
+                } else if (icon.classList.contains('fa-github')) {
+                    window.open('https://github.com/tu-usuario', '_blank');
+                }
+            });
+        });
+
+        // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const section = this.dataset.section;
+                
+                // Remove active class from all nav items
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                    nav.classList.add('text-gray-500');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                this.classList.remove('text-gray-500');
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(sec => {
+                    sec.classList.add('hidden');
+                });
+                
+                // Show selected section with animation
+                const targetSection = document.getElementById(section + '-section');
+                targetSection.classList.remove('hidden');
+                
+                // Reset and apply enter animation
+                targetSection.style.opacity = '0';
+                targetSection.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    targetSection.style.opacity = '1';
+                    targetSection.style.transform = 'translateY(0)';
+                }, 50);
+            });
+        });
+
+        // Smooth animations on load
+        window.addEventListener('load', function() {
+            // Animate stats cards
+            document.querySelectorAll('.stat-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+
+        // Contact links functionality
+        document.querySelectorAll('#contact-section .flex').forEach(contactItem => {
+            contactItem.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                const text = this.querySelector('span').textContent;
+                
+                if (icon.classList.contains('fa-envelope')) {
+                    window.location.href = `mailto:${text}`;
+                } else if (icon.classList.contains('fa-phone')) {
+                    window.location.href = `tel:${text}`;
+                } else if (icon.classList.contains('fa-whatsapp')) {
+                    window.open(`https://wa.me/${text.replace(/\s/g, '').replace('+', '')}`, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
