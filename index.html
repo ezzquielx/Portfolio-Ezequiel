@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="images/eze.ico">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio | GitHub Pages</title>
@@ -61,6 +64,19 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .project-image {
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -71,8 +87,8 @@
             <div class="profile-border inline-block mb-6">
                 <div class="profile-inner">
                     <div class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-    <img src="https://i.ibb.co/FqN3m5jd/Proyecto-nuevo.png" alt="Ezequiel" class="w-full h-full object-cover rounded-full">
-</div>
+                        <img src="https://i.ibb.co/FqN3m5jd/Proyecto-nuevo.png" alt="Ezequiel" class="w-full h-full object-cover rounded-full">
+                    </div>
                 </div>
             </div>
 
@@ -104,22 +120,22 @@
             </div>
 
             <div class="flex justify-center space-x-4 mb-6">
-    <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-        <i class="fab fa-linkedin-in text-gray-600"></i>
-    </a>
-    
-    <a href="https://github.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-        <i class="fab fa-github text-gray-600"></i>
-    </a>
+                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-linkedin-in text-gray-600"></i>
+                </a>
+                
+                <a href="https://github.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-github text-gray-600"></i>
+                </a>
 
-    <a href="https://instagram.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-        <i class="fab fa-instagram text-gray-600"></i>
-    </a>
+                <a href="https://instagram.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-instagram text-gray-600"></i>
+                </a>
 
-    <a href="https://behance.net/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-        <i class="fab fa-behance text-gray-600"></i>
-    </a>
-</div>
+                <a href="https://behance.net/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-behance text-gray-600"></i>
+                </a>
+            </div>
 
             <div class="bg-gray-100 rounded-full p-1 mb-8">
                 <div class="grid grid-cols-4">
@@ -163,50 +179,16 @@
             <!-- Projects Section -->
             <div id="projects-section" class="content-section mb-12 hidden">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">Proyectos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="p-4 bg-white rounded-xl border shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <img src="ruta/a/tu-imagen1.jpg" alt="Proyecto 1" class="w-full h-32 object-cover rounded-t-xl">
-                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 1</h3>
-                        <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto y tecnologías utilizadas.</p>
-                        <div class="flex space-x-2">
-                            <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded">React</span>
-                            <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded">Node.js</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-blue-500 font-medium hover:underline">Ver más</a>
-                    </div>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Los proyectos se generan automáticamente aquí -->
+                </div>
 
-                    <div class="p-4 bg-white rounded-xl border shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <img src="ruta/a/tu-imagen2.jpg" alt="Proyecto 2" class="w-full h-32 object-cover rounded-t-xl">
-                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 2</h3>
-                        <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto y tecnologías utilizadas.</p>
-                        <div class="flex space-x-2">
-                            <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded">Vue.js</span>
-                            <span class="px-2 py-1 bg-yellow-100 text-yellow-600 text-xs rounded">Firebase</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-blue-500 font-medium hover:underline">Ver más</a>
-                    </div>
-
-                    <div class="p-4 bg-white rounded-xl border shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <img src="ruta/a/tu-imagen3.jpg" alt="Proyecto 3" class="w-full h-32 object-cover rounded-t-xl">
-                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 3</h3>
-                        <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto y tecnologías utilizadas.</p>
-                        <div class="flex space-x-2">
-                            <span class="px-2 py-1 bg-red-100 text-red-600 text-xs rounded">Angular</span>
-                            <span class="px-2 py-1 bg-orange-100 text-orange-600 text-xs rounded">MongoDB</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-blue-500 font-medium hover:underline">Ver más</a>
-                    </div>
-
-                    <div class="p-4 bg-white rounded-xl border shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <img src="ruta/a/tu-imagen4.jpg" alt="Proyecto 4" class="w-full h-32 object-cover rounded-t-xl">
-                        <h3 class="font-semibold text-gray-800 mb-2">Proyecto 4</h3>
-                        <p class="text-gray-600 text-sm mb-3">Descripción breve del proyecto y tecnologías utilizadas.</p>
-                        <div class="flex space-x-2">
-                            <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded">Django</span>
-                            <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded">PostgreSQL</span>
-                        </div>
-                        <a href="#" class="mt-4 inline-block text-blue-500 font-medium hover:underline">Ver más</a>
-                    </div>
+                <!-- Iniciar Proyecto Button -->
+                <div class="mt-8 text-center">
+                    <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Iniciar Proyecto
+                    </button>
                 </div>
             </div>
 
@@ -275,7 +257,112 @@
                         <i class="fas fa-map-marker-alt text-blue-500"></i>
                         <span class="text-gray-700">Tucumán, Argentina</span>
                     </div>
-                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-all duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content transform scale-95 transition-all duration-300">
+                <!-- Modal Header -->
+                <div class="sticky top-0 bg-white border-b border-gray-100 p-6 rounded-t-2xl z-10">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                                <i id="modalIcon" class="fas fa-palette text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h2 id="modalTitle" class="text-xl font-bold text-gray-800">Proyecto</h2>
+                                <p id="modalCategory" class="text-sm text-gray-500">Categoría</p>
+                            </div>
+                        </div>
+                        <button onclick="closeModal()" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fas fa-times text-gray-600"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Content -->
+                <div class="p-6">
+                    <!-- Project Gallery -->
+                    <div class="mb-8">
+                        <div id="modalGallery" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <!-- Images will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Main Content -->
+                        <div class="lg:col-span-2">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Descripción del Proyecto</h3>
+                            <div id="modalDescription" class="text-gray-600 leading-relaxed mb-6">
+                                <!-- Description will be inserted here -->
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Proceso de Trabajo</h3>
+                            <div id="modalProcess" class="space-y-4 mb-6">
+                                <!-- Process steps will be inserted here -->
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Resultados</h3>
+                            <div id="modalResults" class="text-gray-600 leading-relaxed">
+                                <!-- Results will be inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="space-y-6">
+                            <!-- Project Details -->
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <h4 class="font-semibold text-gray-800 mb-3">Detalles del Proyecto</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Cliente:</span>
+                                        <span id="modalClient" class="text-gray-800">-</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Año:</span>
+                                        <span id="modalYear" class="text-gray-800">-</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Duración:</span>
+                                        <span id="modalDuration" class="text-gray-800">-</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Estado:</span>
+                                        <span id="modalStatus" class="text-gray-800">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technologies -->
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <h4 class="font-semibold text-gray-800 mb-3">Tecnologías</h4>
+                                <div id="modalTechnologies" class="flex flex-wrap gap-2">
+                                    <!-- Tech tags will be inserted here -->
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="space-y-3">
+                                <button id="modalCodeBtn" class="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-4 rounded-xl font-medium transition-colors hidden">
+                                    <i class="fab fa-github mr-2"></i>
+                                    Ver Código
+                                </button>
+                            </div>
+
+                            <!-- Contact CTA -->
+                            <div class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-4 text-white text-center">
+                                <h4 class="font-semibold mb-2">¿Te gusta este proyecto?</h4>
+                                <p class="text-sm opacity-90 mb-3">Trabajemos juntos en tu próximo proyecto</p>
+                                <button onclick="window.location.href='contact.html'" class="bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+                                    Contactar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,6 +374,245 @@
         document.querySelector('.download-btn').addEventListener('click', function() {
             window.location.href = 'contact.html';
         });
+
+        // Project data for detailed modal
+        const projectData = {
+            'identidad-visual': {
+                title: 'Identidad Visual Corporativa',
+                category: 'Diseño Gráfico',
+                icon: 'fas fa-palette',
+                client: 'TechStart SRL',
+                year: '2024',
+                duration: '2 semanas',
+                status: 'Completado',
+                description: 'Desarrollo completo de identidad visual para startup tecnológica emergente. El proyecto incluyó investigación de mercado, análisis de competencia, desarrollo conceptual y creación de todos los elementos de marca necesarios para establecer una presencia sólida en el mercado.',
+                process: [
+                    {
+                        title: 'Investigación y Briefing',
+                        description: 'Análisis profundo del mercado objetivo, competencia y valores de la marca.'
+                    },
+                    {
+                        title: 'Conceptualización',
+                        description: 'Desarrollo de conceptos visuales basados en los insights obtenidos.'
+                    },
+                    {
+                        title: 'Diseño del Logotipo',
+                        description: 'Creación del símbolo principal de la marca con múltiples variaciones.'
+                    },
+                    {
+                        title: 'Manual de Marca',
+                        description: 'Documentación completa de uso y aplicaciones de la identidad.'
+                    }
+                ],
+                results: 'La nueva identidad visual resultó en un incremento del 40% en el reconocimiento de marca y una mejora significativa en la percepción de profesionalismo por parte de los clientes potenciales.',
+                technologies: ['Illustrator', 'Photoshop', 'Branding', 'InDesign'],
+                images: [
+                    { type: 'gradient', from: 'purple-400', to: 'pink-400', icon: 'fas fa-palette' },
+                    { type: 'gradient', from: 'blue-400', to: 'purple-400', icon: 'fas fa-layer-group' },
+                    { type: 'gradient', from: 'pink-400', to: 'red-400', icon: 'fas fa-swatchbook' },
+                    { type: 'gradient', from: 'purple-400', to: 'indigo-400', icon: 'fas fa-font' }
+                ],
+                hasCode: false
+            },
+            'sitio-web': {
+                title: 'Sitio Web Corporativo',
+                category: 'Desarrollo Web',
+                icon: 'fas fa-code',
+                client: 'Servicios Pro',
+                year: '2024',
+                duration: '3 semanas',
+                status: 'Completado',
+                description: 'Diseño y desarrollo de sitio web corporativo completamente responsivo. El proyecto incluyó arquitectura de información, diseño UX/UI, desarrollo frontend y backend, además de implementación de SEO técnico.',
+                process: [
+                    {
+                        title: 'Planificación y Wireframes',
+                        description: 'Definición de estructura, flujos de usuario y wireframes detallados.'
+                    },
+                    {
+                        title: 'Diseño Visual',
+                        description: 'Creación de mockups y sistema de diseño responsivo.'
+                    },
+                    {
+                        title: 'Desarrollo Frontend',
+                        description: 'Implementación con HTML5, CSS3 y JavaScript vanilla.'
+                    },
+                    {
+                        title: 'Optimización y Testing',
+                        description: 'Pruebas de rendimiento, SEO y compatibilidad cross-browser.'
+                    }
+                ],
+                results: 'El sitio web logró una mejora del 60% en velocidad de carga, 100% de responsividad y un incremento del 35% en tiempo de permanencia de usuarios.',
+                technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive', 'SEO'],
+                images: [
+                    { type: 'gradient', from: 'blue-400', to: 'cyan-400', icon: 'fas fa-code' },
+                    { type: 'gradient', from: 'green-400', to: 'blue-400', icon: 'fas fa-mobile-alt' },
+                    { type: 'gradient', from: 'cyan-400', to: 'blue-400', icon: 'fas fa-desktop' },
+                    { type: 'gradient', from: 'blue-400', to: 'indigo-400', icon: 'fas fa-chart-line' }
+                ],
+                hasCode: true
+            },
+            'indumentaria-deportiva': {
+                title: 'Diseño de Indumentaria Deportiva',
+                category: 'Merchandising',
+                icon: 'fas fa-tshirt',
+                client: 'Club Deportivo Norte',
+                year: '2023',
+                duration: '1 mes',
+                status: 'Completado',
+                description: 'Colección completa de diseños para equipo deportivo local. El proyecto abarcó desde la conceptualización hasta la producción final, incluyendo camisetas oficiales, de entrenamiento, shorts y accesorios.',
+                process: [
+                    {
+                        title: 'Concepto y Paleta',
+                        description: 'Desarrollo del concepto visual basado en la identidad del club.'
+                    },
+                    {
+                        title: 'Diseño de Patrones',
+                        description: 'Creación de patrones únicos y elementos gráficos distintivos.'
+                    },
+                    {
+                        title: 'Prototipado',
+                        description: 'Desarrollo de prototipos físicos para validación de diseños.'
+                    },
+                    {
+                        title: 'Producción',
+                        description: 'Supervisión del proceso de sublimación y control de calidad.'
+                    }
+                ],
+                results: 'La nueva línea de indumentaria incrementó las ventas del club en un 50% y mejoró significativamente la imagen del equipo tanto en medios como en redes sociales.',
+                technologies: ['Illustrator', 'Diseño Textil', 'Sublimación', 'Mockup'],
+                images: [
+                    { type: 'gradient', from: 'green-400', to: 'blue-400', icon: 'fas fa-tshirt' },
+                    { type: 'gradient', from: 'blue-400', to: 'green-400', icon: 'fas fa-running' },
+                    { type: 'gradient', from: 'green-400', to: 'cyan-400', icon: 'fas fa-medal' },
+                    { type: 'gradient', from: 'cyan-400', to: 'green-400', icon: 'fas fa-trophy' }
+                ],
+                hasCode: false
+            },
+            'campaña-digital': {
+                title: 'Campaña Digital 360°',
+                category: 'Social Media',
+                icon: 'fas fa-share-alt',
+                client: 'Restaurante Gourmet',
+                year: '2024',
+                duration: 'Ongoing',
+                status: 'En Progreso',
+                description: 'Estrategia integral de contenido visual para redes sociales de restaurante gourmet. Incluye fotografía de productos, diseño de posts, stories, banners promocionales y contenido audiovisual.',
+                process: [
+                    {
+                        title: 'Estrategia de Contenido',
+                        description: 'Definición de line editorial y calendario de publicaciones.'
+                    },
+                    {
+                        title: 'Sesiones de Fotos',
+                        description: 'Fotografía profesional de platos y ambiente del restaurante.'
+                    },
+                    {
+                        title: 'Diseño de Posts',
+                        description: 'Creación de templates y diseños para diferentes tipos de contenido.'
+                    },
+                    {
+                        title: 'Contenido Audiovisual',
+                        description: 'Desarrollo de videos cortos y animaciones para stories.'
+                    }
+                ],
+                results: 'La campaña ha generado un crecimiento del 120% en seguidores, 80% de aumento en engagement y un incremento del 25% en reservas directas desde redes sociales.',
+                technologies: ['Photoshop', 'After Effects', 'Social Media', 'Video Editing'],
+                images: [
+                    { type: 'gradient', from: 'red-400', to: 'pink-400', icon: 'fas fa-share-alt' },
+                    { type: 'gradient', from: 'pink-400', to: 'purple-400', icon: 'fas fa-camera' },
+                    { type: 'gradient', from: 'red-400', to: 'orange-400', icon: 'fas fa-heart' },
+                    { type: 'gradient', from: 'orange-400', to: 'red-400', icon: 'fas fa-chart-bar' }
+                ],
+                hasCode: false
+            }
+        };
+
+        // Modal functions
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            // Update modal content
+            document.getElementById('modalIcon').className = `${project.icon} text-white text-sm`;
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalCategory').textContent = project.category;
+            document.getElementById('modalClient').textContent = project.client;
+            document.getElementById('modalYear').textContent = project.year;
+            document.getElementById('modalDuration').textContent = project.duration;
+            document.getElementById('modalStatus').textContent = project.status;
+            document.getElementById('modalDescription').textContent = project.description;
+            document.getElementById('modalResults').textContent = project.results;
+
+            // Update gallery
+            const gallery = document.getElementById('modalGallery');
+            gallery.innerHTML = '';
+            project.images.forEach(img => {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = `h-48 bg-gradient-to-br from-${img.from} to-${img.to} rounded-xl flex items-center justify-center`;
+                imageDiv.innerHTML = `
+                    <div class="text-center text-white">
+                        <i class="${img.icon} text-3xl mb-2"></i>
+                        <p class="text-sm opacity-80">Imagen del proyecto</p>
+                    </div>
+                `;
+                gallery.appendChild(imageDiv);
+            });
+
+            // Update process
+            const processDiv = document.getElementById('modalProcess');
+            processDiv.innerHTML = '';
+            project.process.forEach((step, index) => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'flex space-x-4';
+                stepDiv.innerHTML = `
+                    <div class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                        ${index + 1}
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">${step.title}</h4>
+                        <p class="text-gray-600 text-sm">${step.description}</p>
+                    </div>
+                `;
+                processDiv.appendChild(stepDiv);
+            });
+
+            // Update technologies
+            const techDiv = document.getElementById('modalTechnologies');
+            techDiv.innerHTML = '';
+            project.technologies.forEach(tech => {
+                const techSpan = document.createElement('span');
+                techSpan.className = 'px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full font-medium';
+                techSpan.textContent = tech;
+                techDiv.appendChild(techSpan);
+            });
+
+            // Update action buttons
+            document.getElementById('modalCodeBtn').style.display = project.hasCode ? 'block' : 'none';
+
+            // Show modal
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.modal-content').classList.remove('scale-95');
+                modal.querySelector('.modal-content').classList.add('scale-100');
+            }, 10);
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('.modal-content').classList.remove('scale-100');
+            modal.querySelector('.modal-content').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
 
         // Navigation functionality
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -320,6 +646,112 @@
                     targetSection.style.transform = 'translateY(0)';
                 }, 50);
             });
+        });
+
+        // Function to generate project cards automatically
+        function generateProjectCards() {
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = ''; // Clear existing content
+            
+            Object.keys(projectData).forEach((projectId, index) => {
+                const project = projectData[projectId];
+                const mainImage = project.images[0]; // Use first image as main
+                
+                // Get color for tech tags
+                const getTagColors = (tech) => {
+                    const colorMap = {
+                        'Illustrator': 'purple',
+                        'Photoshop': 'pink', 
+                        'Branding': 'blue',
+                        'InDesign': 'indigo',
+                        'HTML5': 'blue',
+                        'CSS3': 'green', 
+                        'JavaScript': 'yellow',
+                        'Responsive': 'cyan',
+                        'SEO': 'emerald',
+                        'Diseño Textil': 'blue',
+                        'Sublimación': 'orange',
+                        'Mockup': 'gray',
+                        'After Effects': 'purple',
+                        'Social Media': 'pink',
+                        'Video Editing': 'red'
+                    };
+                    return colorMap[tech] || 'gray';
+                };
+                
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card bg-white rounded-2xl border shadow-lg overflow-hidden cursor-pointer';
+                projectCard.innerHTML = `
+                    <div class="relative overflow-hidden">
+                        <div class="project-image w-full h-48 bg-gradient-to-br from-${mainImage.from} to-${mainImage.to} flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="${project.icon} text-3xl mb-2"></i>
+                                <p class="text-sm opacity-80">Imagen del proyecto</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                                ${project.category}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">${project.title}</h3>
+                        <p class="text-gray-600 mb-3 text-sm leading-relaxed">
+                            ${project.description.substring(0, 120)}...
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            ${project.technologies.slice(0, 3).map(tech => {
+                                const color = getTagColors(tech);
+                                return `<span class="px-2 py-1 bg-${color}-100 text-${color}-600 text-xs rounded-full font-medium">${tech}</span>`;
+                            }).join('')}
+                        </div>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span><i class="fas fa-calendar-alt mr-1"></i> ${project.year}</span>
+                            <span><i class="fas fa-clock mr-1"></i> ${project.duration}</span>
+                        </div>
+                    </div>
+                `;
+                
+                // Add click event
+                projectCard.addEventListener('click', () => {
+                    openModal(projectId);
+                });
+                
+                projectsGrid.appendChild(projectCard);
+            });
+        }
+
+        // Add click handlers for project interactions in portfolio
+        function initProjectCards() {
+            // Projects are now generated automatically, so just call generateProjectCards
+            generateProjectCards();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize project cards
+            initProjectCards();
+            
+            // Close modal on outside click
+            const modal = document.getElementById('projectModal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target.id === 'projectModal') {
+                        closeModal();
+                    }
+                });
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
 
         // Smooth animations on load
