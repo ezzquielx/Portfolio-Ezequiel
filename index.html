@@ -83,6 +83,29 @@
         .project-img.error {
             opacity: 0;
         }
+        .carousel-image {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .thumbnail {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail.active {
+            border: 3px solid #3B82F6;
+            opacity: 1;
+        }
+        .thumbnail:not(.active) {
+            opacity: 0.6;
+        }
+        .thumbnail:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -264,6 +287,48 @@
         </div>
     </div>
 
+    <!-- Image Carousel Modal -->
+    <div id="imageCarouselModal" class="fixed inset-0 bg-black bg-opacity-90 z-[70] hidden opacity-0 transition-all duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <!-- Carousel Container -->
+            <div class="relative max-w-5xl w-full">
+                <!-- Close Button -->
+                <button onclick="closeImageCarousel()" class="absolute top-4 right-4 z-[80] w-12 h-12 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all text-white">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+                
+                <!-- Previous Button -->
+                <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-[80] w-12 h-12 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all text-white">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                
+                <!-- Next Button -->
+                <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-[80] w-12 h-12 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all text-white">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+                
+                <!-- Image Container -->
+                <div class="relative">
+                    <div id="carouselImageContainer" class="flex items-center justify-center min-h-[70vh]">
+                        <img id="carouselImage" src="" alt="" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl">
+                    </div>
+                    
+                    <!-- Image Info -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full">
+                        <span id="imageCounter">1 / 4</span>
+                    </div>
+                </div>
+                
+                <!-- Thumbnail Navigation -->
+                <div class="mt-6">
+                    <div id="thumbnailContainer" class="flex justify-center space-x-2 max-w-full overflow-x-auto pb-2">
+                        <!-- Thumbnails will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Project Detail Modal -->
     <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-all duration-300">
         <div class="flex items-center justify-center min-h-screen p-4">
@@ -348,8 +413,6 @@
                                 </div>
                             </div>
 
-
-
                             <!-- Contact CTA -->
                             <div class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-4 text-white text-center">
                                 <h4 class="font-semibold mb-2">¿Te gusta este proyecto?</h4>
@@ -413,6 +476,9 @@
                 fallbackColor: 'purple-400', // Color de respaldo si no cargan las imágenes
                 hasCode: false
             },
+
+            
+
             'sitio-web': {
                 title: 'Identidad Visual y Aplicación en Indumentaria',
                 category: 'Merchandising',
@@ -489,7 +555,8 @@
                 ],
                 fallbackColor: 'green-400',
                 hasCode: false
-            },
+            }
+
                         // ========================================
             // TEMPLATE PARA NUEVO PROYECTO - Copia esto y modifica:
             // ========================================
@@ -571,7 +638,189 @@
                 hasCode: false // true si tiene código para mostrar
             }
             */
+
+                                    // ========================================
+            // TEMPLATE PARA NUEVO PROYECTO - Copia esto y modifica:
+            // ========================================
+            /*
+            
+            ,'campaña-digital': {
+                title: 'Campaña Digital 360°',
+                category: 'Social Media',
+                icon: 'fas fa-share-alt',
+                client: 'Restaurante Gourmet',
+                year: '2024',
+                duration: 'Ongoing',
+                status: 'En Progreso',
+                description: 'Estrategia integral de contenido visual para redes sociales de restaurante gourmet. Incluye fotografía de productos, diseño de posts, stories, banners promocionales y contenido audiovisual.',
+                process: [
+                    {
+                        title: 'Estrategia de Contenido',
+                        description: 'Definición de line editorial y calendario de publicaciones.'
+                    },
+                    {
+                        title: 'Sesiones de Fotos',
+                        description: 'Fotografía profesional de platos y ambiente del restaurante.'
+                    },
+                    {
+                        title: 'Diseño de Posts',
+                        description: 'Creación de templates y diseños para diferentes tipos de contenido.'
+                    },
+                    {
+                        title: 'Contenido Audiovisual',
+                        description: 'Desarrollo de videos cortos y animaciones para stories.'
+                    }
+                ],
+                results: 'La campaña ha generado un crecimiento del 120% en seguidores, 80% de aumento en engagement y un incremento del 25% en reservas directas desde redes sociales.',
+                technologies: ['Photoshop', 'After Effects', 'Social Media', 'Video Editing'],
+                // IMÁGENES - Reemplaza estas URLs con las tuyas:
+                images: [
+                    'https://picsum.photos/400/300?random=11',
+                    'https://picsum.photos/400/300?random=12',
+                    'https://picsum.photos/400/300?random=13',
+                    'https://picsum.photos/400/300?random=14'
+                ],
+                fallbackColor: 'red-400',
+                hasCode: false
+            }
+            
+            // ========================================
+            // TEMPLATE PARA NUEVO PROYECTO - Copia esto y modifica:
+            // ========================================
+            /*
+            ,'nuevo-proyecto': {
+                title: 'Nombre del Proyecto',
+                category: 'Categoría',
+                icon: 'fas fa-icon-name', // Busca iconos en FontAwesome
+                client: 'Nombre del Cliente',
+                year: '2024',
+                duration: 'X semanas/meses',
+                status: 'Completado/En Progreso',
+                description: 'Descripción detallada del proyecto...',
+                process: [
+                    {
+                        title: 'Paso 1',
+                        description: 'Descripción del primer paso...'
+                    },
+                    {
+                        title: 'Paso 2', 
+                        description: 'Descripción del segundo paso...'
+                    }
+                    // Agrega más pasos según necesites
+                ],
+                results: 'Resultados obtenidos del proyecto...',
+                technologies: ['Tech1', 'Tech2', 'Tech3'], // Tecnologías usadas
+                images: [
+                    'https://tu-url-imagen-1.com',
+                    'https://tu-url-imagen-2.com',
+                    'https://tu-url-imagen-3.com',
+                    'https://tu-url-imagen-4.com'
+                ],
+                fallbackColor: 'blue-400', // Color de respaldo
+                hasCode: false // true si tiene código para mostrar
+            }
+            */
+
+
         };
+
+        // ========================================
+        // CAROUSEL FUNCTIONALITY
+        // ========================================
+        let currentImageIndex = 0;
+        let currentProjectImages = [];
+        let currentProjectTitle = '';
+
+        function openImageCarousel(imageIndex, projectImages, projectTitle) {
+            currentImageIndex = imageIndex;
+            currentProjectImages = projectImages;
+            currentProjectTitle = projectTitle;
+            
+            updateCarouselImage();
+            generateThumbnails();
+            
+            const modal = document.getElementById('imageCarouselModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageCarousel() {
+            const modal = document.getElementById('imageCarouselModal');
+            modal.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+            updateCarouselImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = currentImageIndex === 0 ? currentProjectImages.length - 1 : currentImageIndex - 1;
+            updateCarouselImage();
+        }
+
+        function goToImage(index) {
+            currentImageIndex = index;
+            updateCarouselImage();
+        }
+
+        function updateCarouselImage() {
+            const carouselImage = document.getElementById('carouselImage');
+            const imageCounter = document.getElementById('imageCounter');
+            
+            carouselImage.src = currentProjectImages[currentImageIndex];
+            carouselImage.alt = `${currentProjectTitle} - Imagen ${currentImageIndex + 1}`;
+            imageCounter.textContent = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
+            
+            // Update thumbnail active state
+            document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+                if (index === currentImageIndex) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+
+        function generateThumbnails() {
+            const thumbnailContainer = document.getElementById('thumbnailContainer');
+            thumbnailContainer.innerHTML = '';
+            
+            currentProjectImages.forEach((imageUrl, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'thumbnail w-16 h-16 bg-gray-200 rounded-lg overflow-hidden flex-shrink-0';
+                thumbnail.innerHTML = `<img src="${imageUrl}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover">`;
+                thumbnail.addEventListener('click', () => goToImage(index));
+                thumbnailContainer.appendChild(thumbnail);
+            });
+        }
+
+        // Keyboard navigation for carousel
+        document.addEventListener('keydown', (e) => {
+            const carouselModal = document.getElementById('imageCarouselModal');
+            if (!carouselModal.classList.contains('hidden')) {
+                switch(e.key) {
+                    case 'Escape':
+                        closeImageCarousel();
+                        break;
+                    case 'ArrowLeft':
+                        previousImage();
+                        break;
+                    case 'ArrowRight':
+                        nextImage();
+                        break;
+                }
+            }
+        });
 
         // Trabajemos Juntos button functionality - Redirige a contact.html
         document.querySelector('.download-btn').addEventListener('click', function() {
@@ -579,9 +828,9 @@
         });
 
         // Función para crear imagen con fallback
-        function createImageElement(url, fallbackColor, alt, className = '') {
+        function createImageElement(url, fallbackColor, alt, className = '', clickable = false, imageIndex = 0, projectImages = [], projectTitle = '') {
             const container = document.createElement('div');
-            container.className = `relative overflow-hidden ${className}`;
+            container.className = `relative overflow-hidden ${className} ${clickable ? 'carousel-image' : ''}`;
             
             // Crear imagen principal
             const img = document.createElement('img');
@@ -611,6 +860,19 @@
                 img.style.display = 'block';
             };
             
+            // Add click event if clickable
+            if (clickable) {
+                container.addEventListener('click', () => {
+                    openImageCarousel(imageIndex, projectImages, projectTitle);
+                });
+                
+                // Add visual indicator for clickable images
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center';
+                overlay.innerHTML = '<i class="fas fa-expand text-white text-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>';
+                container.appendChild(overlay);
+            }
+            
             container.appendChild(fallback);
             container.appendChild(img);
             
@@ -633,7 +895,7 @@
             document.getElementById('modalDescription').textContent = project.description;
             document.getElementById('modalResults').textContent = project.results;
 
-            // Update gallery with real images
+            // Update gallery with clickable images
             const gallery = document.getElementById('modalGallery');
             gallery.innerHTML = '';
             project.images.forEach((imageUrl, index) => {
@@ -641,7 +903,11 @@
                     imageUrl, 
                     project.fallbackColor, 
                     `${project.title} - Imagen ${index + 1}`, 
-                    'h-48 rounded-xl'
+                    'h-48 rounded-xl',
+                    true, // clickable
+                    index, // imageIndex
+                    project.images, // projectImages
+                    project.title // projectTitle
                 );
                 gallery.appendChild(imageContainer);
             });
@@ -673,8 +939,6 @@
                 techSpan.textContent = tech;
                 techDiv.appendChild(techSpan);
             });
-
-     
 
             // Show modal
             const modal = document.getElementById('projectModal');
@@ -838,12 +1102,29 @@
                     }
                 });
             }
+
+            // Close carousel on outside click
+            const carouselModal = document.getElementById('imageCarouselModal');
+            if (carouselModal) {
+                carouselModal.addEventListener('click', (e) => {
+                    if (e.target.id === 'imageCarouselModal') {
+                        closeImageCarousel();
+                    }
+                });
+            }
         });
 
         // Close modal on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeModal();
+                const carouselModal = document.getElementById('imageCarouselModal');
+                const projectModal = document.getElementById('projectModal');
+                
+                if (!carouselModal.classList.contains('hidden')) {
+                    closeImageCarousel();
+                } else if (!projectModal.classList.contains('hidden')) {
+                    closeModal();
+                }
             }
         });
 
