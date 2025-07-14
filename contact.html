@@ -256,20 +256,20 @@
 
         // Función para crear el mensaje de WhatsApp
         function createWhatsAppMessage(data) {
-            let message = `🚀 *Nueva Consulta de Proyecto*\n\n`;
-            message += `👤 *Nombre:* ${data.name}\n`;
-            message += `📧 *Email:* ${data.email}\n`;
-            message += `📱 *Teléfono:* ${data.phone}\n\n`;
-            message += `🗂️ *Detalles del Proyecto:*\n`;
+            let message = `• *Nueva Consulta de Proyecto*\n\n`;
+            message += `- *Nombre:* ${data.name}\n`;
+            message += `- *Email:* ${data.email}\n`;
+            message += `- *Teléfono:* ${data.phone}\n\n`;
+            message += `- *Detalles del Proyecto:*\n`;
             message += `• *Tipo:* ${getProjectTypeText(data.projectType)}\n`;
             message += `• *Presupuesto:* ${data.budget}\n`;
             message += `• *Plazo:* ${getTimelineText(data.timeline)}\n\n`;
             
             if (data.description) {
-                message += `✏️ *Descripción:*\n${data.description}\n\n`;
+                message += `• *Descripción:*\n${data.description}\n\n`;
             }
             
-            message += `¡Espero que podamos trabajar juntos! 🤝`;
+            message += `¡Espero que podamos trabajar juntos! `;
             
             return message;
         }
