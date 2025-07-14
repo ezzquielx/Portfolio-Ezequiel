@@ -260,13 +260,13 @@
             message += `👤 *Nombre:* ${data.name}\n`;
             message += `📧 *Email:* ${data.email}\n`;
             message += `📱 *Teléfono:* ${data.phone}\n\n`;
-            message += `💼 *Detalles del Proyecto:*\n`;
+            message += `🗂️ *Detalles del Proyecto:*\n`;
             message += `• *Tipo:* ${getProjectTypeText(data.projectType)}\n`;
             message += `• *Presupuesto:* ${data.budget}\n`;
             message += `• *Plazo:* ${getTimelineText(data.timeline)}\n\n`;
             
             if (data.description) {
-                message += `📝 *Descripción:*\n${data.description}\n\n`;
+                message += `✏️ *Descripción:*\n${data.description}\n\n`;
             }
             
             message += `¡Espero que podamos trabajar juntos! 🤝`;
