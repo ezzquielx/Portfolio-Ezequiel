@@ -77,6 +77,12 @@
         .project-card:hover .project-image {
             transform: scale(1.02);
         }
+        .project-img {
+            transition: opacity 0.3s ease;
+        }
+        .project-img.error {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -101,11 +107,11 @@
                     <div class="text-sm text-gray-500 leading-tight">Años de<br>trabajo</div>
                 </div>
                 <div class="stat-card flex flex-col items-center justify-center text-center p-4 bg-white rounded-xl shadow-sm border min-h-[80px]">
-                    <div class="text-2xl font-bold text-gray-800 mb-1">+20</div>
+                    <div class="text-2xl font-bold text-gray-800 mb-1">+10</div>
                     <div class="text-sm text-gray-500 leading-tight">Proyectos<br>completados</div>
                 </div>
                 <div class="stat-card flex flex-col items-center justify-center text-center p-4 bg-white rounded-xl shadow-sm border min-h-[80px]">
-                    <div class="text-2xl font-bold text-gray-800 mb-1">20</div>
+                    <div class="text-2xl font-bold text-gray-800 mb-1">+10</div>
                     <div class="text-sm text-gray-500 leading-tight">Clientes<br>Satisfechos</div>
                 </div>
             </div>
@@ -120,21 +126,17 @@
             </div>
 
             <div class="flex justify-center space-x-4 mb-6">
-                <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                    <i class="fab fa-linkedin-in text-gray-600"></i>
-                </a>
                 
-                <a href="https://github.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                
+                <a href="https://github.com/ezzquielx" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                     <i class="fab fa-github text-gray-600"></i>
                 </a>
 
-                <a href="https://instagram.com/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                <a href="https://instagram.com/ezequiel.gfx" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
                     <i class="fab fa-instagram text-gray-600"></i>
                 </a>
 
-                <a href="https://behance.net/tu-usuario" target="_blank" class="social-btn w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                    <i class="fab fa-behance text-gray-600"></i>
-                </a>
+              
             </div>
 
             <div class="bg-gray-100 rounded-full p-1 mb-8">
@@ -346,13 +348,7 @@
                                 </div>
                             </div>
 
-                            <!-- Actions -->
-                            <div class="space-y-3">
-                                <button id="modalCodeBtn" class="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-4 rounded-xl font-medium transition-colors hidden">
-                                    <i class="fab fa-github mr-2"></i>
-                                    Ver Código
-                                </button>
-                            </div>
+
 
                             <!-- Contact CTA -->
                             <div class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-4 text-white text-center">
@@ -370,22 +366,23 @@
     </div>
 
     <script>
-        // Trabajemos Juntos button functionality - Redirige a contact.html
-        document.querySelector('.download-btn').addEventListener('click', function() {
-            window.location.href = 'contact.html';
-        });
-
-        // Project data for detailed modal
+        // ========================================
+        // CONFIGURACIÓN DE PROYECTOS - FÁCIL DE EDITAR
+        // ========================================
+        
+        // Para agregar un nuevo proyecto, simplemente copia el template al final de projectData
+        // Para cambiar imágenes, reemplaza las URLs en el array 'images'
+        
         const projectData = {
             'identidad-visual': {
                 title: 'Identidad Visual Corporativa',
                 category: 'Diseño Gráfico',
                 icon: 'fas fa-palette',
-                client: 'TechStart SRL',
-                year: '2024',
-                duration: '2 semanas',
+                client: 'Morfeo Clothes',
+                year: '2022',
+                duration: '1 mes',
                 status: 'Completado',
-                description: 'Desarrollo completo de identidad visual para startup tecnológica emergente. El proyecto incluyó investigación de mercado, análisis de competencia, desarrollo conceptual y creación de todos los elementos de marca necesarios para establecer una presencia sólida en el mercado.',
+                description: 'Desarrollo integral de identidad visual para un emprendimiento de moda streetwear con una estética audaz y contemporánea. El proyecto incluyó investigación de referencias culturales urbanas, análisis de tendencias visuales en el rubro y una dirección de arte orientada a transmitir actitud, autenticidad y rebeldía. Se diseñaron logotipos, gráficos y aplicaciones textiles con una fuerte carga visual, destacando elementos oscuros, tipografías disruptivas y un lenguaje gráfico coherente con el espíritu de la marca. La propuesta busca posicionar al emprendimiento dentro de la escena urbana actual, conectando con un público joven y con identidad marcada.',
                 process: [
                     {
                         title: 'Investigación y Briefing',
@@ -405,90 +402,100 @@
                     }
                 ],
                 results: 'La nueva identidad visual resultó en un incremento del 40% en el reconocimiento de marca y una mejora significativa en la percepción de profesionalismo por parte de los clientes potenciales.',
-                technologies: ['Illustrator', 'Photoshop', 'Branding', 'InDesign'],
+                technologies: ['Illustrator', 'Photoshop', 'Branding'],
+                // IMÁGENES - Reemplaza estas URLs con las tuyas:
                 images: [
-                    { type: 'gradient', from: 'purple-400', to: 'pink-400', icon: 'fas fa-palette' },
-                    { type: 'gradient', from: 'blue-400', to: 'purple-400', icon: 'fas fa-layer-group' },
-                    { type: 'gradient', from: 'pink-400', to: 'red-400', icon: 'fas fa-swatchbook' },
-                    { type: 'gradient', from: 'purple-400', to: 'indigo-400', icon: 'fas fa-font' }
+                    'https://i.ibb.co/7Np5Y2fp/Artboard-1.jpg',
+                    'https://i.ibb.co/m5hGmQWX/Proyecto-nuevo.jpg',
+                    'https://i.ibb.co/M5BT8cgx/Proyecto-nuevo-1.jpg',
+                    'https://i.ibb.co/n83RPD7d/Proyecto-nuevo-2.jpg'
                 ],
+                fallbackColor: 'purple-400', // Color de respaldo si no cargan las imágenes
                 hasCode: false
             },
             'sitio-web': {
-                title: 'Sitio Web Corporativo',
-                category: 'Desarrollo Web',
+                title: 'Identidad Visual y Aplicación en Indumentaria',
+                category: 'Merchandising',
                 icon: 'fas fa-code',
-                client: 'Servicios Pro',
-                year: '2024',
+                client: 'Ezequiel',
+                year: '2022',
                 duration: '3 semanas',
                 status: 'Completado',
-                description: 'Diseño y desarrollo de sitio web corporativo completamente responsivo. El proyecto incluyó arquitectura de información, diseño UX/UI, desarrollo frontend y backend, además de implementación de SEO técnico.',
+                description: 'Proyecto personal de estudio enfocado en el desarrollo de una propuesta de merchandising para una marca conceptual llamada Zomboid. La identidad visual se inspira en la estética metalera, con un logotipo de estilo agresivo y tipografía distorsionada que evoca oscuridad, rebeldía y fuerza. El diseño fue aplicado en una línea de prendas compuesta por remera, buzo y pantalón, utilizando mockups realistas para simular su implementación en un entorno comercial. Esta propuesta permitió explorar el vínculo entre identidad gráfica, estilo urbano y narrativa visual dentro del universo del streetwear alternativo.',
                 process: [
                     {
-                        title: 'Planificación y Wireframes',
-                        description: 'Definición de estructura, flujos de usuario y wireframes detallados.'
+                        title: 'Conceptualización y Referencias',
+                        description: 'Investigación visual y definición del enfoque estético basado en la cultura metalera y el universo del streetwear alternativo.'
                     },
                     {
-                        title: 'Diseño Visual',
-                        description: 'Creación de mockups y sistema de diseño responsivo.'
+                        title: 'Diseño de Identidad',
+                        description: 'Creación del logotipo principal con estilo tipográfico agresivo, evocando energía, rebeldía y oscuridad, coherente con el concepto de marca.'
                     },
                     {
-                        title: 'Desarrollo Frontend',
-                        description: 'Implementación con HTML5, CSS3 y JavaScript vanilla.'
+                        title: 'Desarrollo de Aplicaciones',
+                        description: 'Diseño de prendas (remera, buzo y pantalón) aplicando la identidad gráfica. Uso de mockups realistas para representar el producto final en contexto comercial.'
                     },
                     {
-                        title: 'Optimización y Testing',
-                        description: 'Pruebas de rendimiento, SEO y compatibilidad cross-browser.'
+                        title: 'Presentación Visual',
+                        description: 'Montaje del material en formato profesional, optimizado para presentación en portafolio, con enfoque en coherencia visual, impacto y claridad.'
                     }
                 ],
-                results: 'El sitio web logró una mejora del 60% en velocidad de carga, 100% de responsividad y un incremento del 35% en tiempo de permanencia de usuarios.',
-                technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive', 'SEO'],
+                results: 'El proyecto permitió consolidar una estética de marca fuerte y diferenciada, logrando una representación visual sólida y coherente con su temática. El ejercicio fortaleció habilidades clave en branding, diseño aplicado a indumentaria y dirección de arte para merchandising conceptual.',
+                technologies: ['Illustrator', 'Photoshop', 'Branding'],
+                // IMÁGENES - Reemplaza estas URLs con las tuyas:
                 images: [
-                    { type: 'gradient', from: 'blue-400', to: 'cyan-400', icon: 'fas fa-code' },
-                    { type: 'gradient', from: 'green-400', to: 'blue-400', icon: 'fas fa-mobile-alt' },
-                    { type: 'gradient', from: 'cyan-400', to: 'blue-400', icon: 'fas fa-desktop' },
-                    { type: 'gradient', from: 'blue-400', to: 'indigo-400', icon: 'fas fa-chart-line' }
+                    'https://i.ibb.co/Tx44rXwq/Proyecto-nuevo-4.jpg',
+                    'https://i.ibb.co/VcXp2T1h/Proyecto-nuevo-3.jpg',
+               
                 ],
+                fallbackColor: 'blue-400',
                 hasCode: true
             },
-            'indumentaria-deportiva': {
-                title: 'Diseño de Indumentaria Deportiva',
-                category: 'Merchandising',
+            'Identidad Visual Personal y Diseño Css': {
+                title: 'Identidad Visual Personal y Diseño CSS',
+                category: 'Branding',
                 icon: 'fas fa-tshirt',
-                client: 'Club Deportivo Norte',
-                year: '2023',
+                client: 'Ezequiel',
+                year: '2025',
                 duration: '1 mes',
                 status: 'Completado',
-                description: 'Colección completa de diseños para equipo deportivo local. El proyecto abarcó desde la conceptualización hasta la producción final, incluyendo camisetas oficiales, de entrenamiento, shorts y accesorios.',
+                description: 'Proyecto de identidad visual personal desarrollado con el objetivo de construir una marca propia coherente y profesional. Incluyó la creación de un logotipo monograma (EG), selección tipográfica, sistema visual y su aplicación mediante diseño CSS. Fue un ejercicio autodidacta que integró branding y desarrollo frontend para representar una imagen clara, tecnológica y adaptable para portafolio digital y presencia online.',
                 process: [
                     {
-                        title: 'Concepto y Paleta',
-                        description: 'Desarrollo del concepto visual basado en la identidad del club.'
+                        title: 'Definición de Identidad Visual',
+                        description: 'Exploración de formas, colores y estilos que representaran mi personalidad y enfoque profesional. Se optó por una paleta fría y una tipografía sólida para transmitir confianza y modernidad.'
                     },
                     {
-                        title: 'Diseño de Patrones',
-                        description: 'Creación de patrones únicos y elementos gráficos distintivos.'
+                        title: 'Creación del Logotipo',
+                        description: 'Diseño del monograma con las letras "E" y "G", combinadas de forma estructurada, con inspiración digital y estética tecnológica. Se trabajó su versatilidad para múltiples formatos.'
                     },
                     {
-                        title: 'Prototipado',
-                        description: 'Desarrollo de prototipos físicos para validación de diseños.'
+                        title: 'Desarrollo CSS',
+                        description: 'Aplicación del sistema visual a través de estilos CSS personalizados. Se diseñaron formularios, componentes y layouts representativos de un sitio personal.'
                     },
                     {
-                        title: 'Producción',
-                        description: 'Supervisión del proceso de sublimación y control de calidad.'
+                        title: 'Maquetación y Pruebas',
+                        description: 'Se implementaron prototipos en HTML y CSS, optimizados para pantallas modernas, con atención especial en la responsividad, accesibilidad y consistencia visual.'
                     }
                 ],
-                results: 'La nueva línea de indumentaria incrementó las ventas del club en un 50% y mejoró significativamente la imagen del equipo tanto en medios como en redes sociales.',
-                technologies: ['Illustrator', 'Diseño Textil', 'Sublimación', 'Mockup'],
+                results: 'Este proyecto consolidó mi identidad gráfica personal, lista para ser utilizada en portafolios, redes profesionales y sitios web. Además, fortaleció mis habilidades tanto en diseño visual como en desarrollo frontend, reafirmando mi perfil como diseñador autodidacta con enfoque integral.',
+                technologies: ['Illustrator', 'CSS3', 'HTML5',],
+                // IMÁGENES - Reemplaza estas URLs con las tuyas:
                 images: [
-                    { type: 'gradient', from: 'green-400', to: 'blue-400', icon: 'fas fa-tshirt' },
-                    { type: 'gradient', from: 'blue-400', to: 'green-400', icon: 'fas fa-running' },
-                    { type: 'gradient', from: 'green-400', to: 'cyan-400', icon: 'fas fa-medal' },
-                    { type: 'gradient', from: 'cyan-400', to: 'green-400', icon: 'fas fa-trophy' }
+                    'https://i.ibb.co/jZDdhfvZ/Proyecto-nuevo-5.jpg',
+                    'https://i.ibb.co/v6c5wQfd/Proyecto-nuevo-6.jpg',
+                    'https://i.ibb.co/rGpw13kQ/Proyecto-nuevo-7.jpg',
+                    'https://i.ibb.co/MkpPsfJs/Proyecto-nuevo-8.jpg'
                 ],
+                fallbackColor: 'green-400',
                 hasCode: false
             },
-            'campaña-digital': {
+                        // ========================================
+            // TEMPLATE PARA NUEVO PROYECTO - Copia esto y modifica:
+            // ========================================
+            /*
+            
+            ,'campaña-digital': {
                 title: 'Campaña Digital 360°',
                 category: 'Social Media',
                 icon: 'fas fa-share-alt',
@@ -517,15 +524,98 @@
                 ],
                 results: 'La campaña ha generado un crecimiento del 120% en seguidores, 80% de aumento en engagement y un incremento del 25% en reservas directas desde redes sociales.',
                 technologies: ['Photoshop', 'After Effects', 'Social Media', 'Video Editing'],
+                // IMÁGENES - Reemplaza estas URLs con las tuyas:
                 images: [
-                    { type: 'gradient', from: 'red-400', to: 'pink-400', icon: 'fas fa-share-alt' },
-                    { type: 'gradient', from: 'pink-400', to: 'purple-400', icon: 'fas fa-camera' },
-                    { type: 'gradient', from: 'red-400', to: 'orange-400', icon: 'fas fa-heart' },
-                    { type: 'gradient', from: 'orange-400', to: 'red-400', icon: 'fas fa-chart-bar' }
+                    'https://picsum.photos/400/300?random=11',
+                    'https://picsum.photos/400/300?random=12',
+                    'https://picsum.photos/400/300?random=13',
+                    'https://picsum.photos/400/300?random=14'
                 ],
+                fallbackColor: 'red-400',
                 hasCode: false
             }
+            
+            // ========================================
+            // TEMPLATE PARA NUEVO PROYECTO - Copia esto y modifica:
+            // ========================================
+            /*
+            ,'nuevo-proyecto': {
+                title: 'Nombre del Proyecto',
+                category: 'Categoría',
+                icon: 'fas fa-icon-name', // Busca iconos en FontAwesome
+                client: 'Nombre del Cliente',
+                year: '2024',
+                duration: 'X semanas/meses',
+                status: 'Completado/En Progreso',
+                description: 'Descripción detallada del proyecto...',
+                process: [
+                    {
+                        title: 'Paso 1',
+                        description: 'Descripción del primer paso...'
+                    },
+                    {
+                        title: 'Paso 2', 
+                        description: 'Descripción del segundo paso...'
+                    }
+                    // Agrega más pasos según necesites
+                ],
+                results: 'Resultados obtenidos del proyecto...',
+                technologies: ['Tech1', 'Tech2', 'Tech3'], // Tecnologías usadas
+                images: [
+                    'https://tu-url-imagen-1.com',
+                    'https://tu-url-imagen-2.com',
+                    'https://tu-url-imagen-3.com',
+                    'https://tu-url-imagen-4.com'
+                ],
+                fallbackColor: 'blue-400', // Color de respaldo
+                hasCode: false // true si tiene código para mostrar
+            }
+            */
         };
+
+        // Trabajemos Juntos button functionality - Redirige a contact.html
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            window.location.href = 'contact.html';
+        });
+
+        // Función para crear imagen con fallback
+        function createImageElement(url, fallbackColor, alt, className = '') {
+            const container = document.createElement('div');
+            container.className = `relative overflow-hidden ${className}`;
+            
+            // Crear imagen principal
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = alt;
+            img.className = 'w-full h-full object-cover project-img';
+            
+            // Crear fallback
+            const fallback = document.createElement('div');
+            fallback.className = `absolute inset-0 bg-gradient-to-br from-${fallbackColor} to-${fallbackColor.replace('400', '500')} flex items-center justify-center`;
+            fallback.innerHTML = `
+                <div class="text-center text-white">
+                    <i class="fas fa-image text-2xl mb-2"></i>
+                    <p class="text-xs opacity-80">Imagen del proyecto</p>
+                </div>
+            `;
+            fallback.style.display = 'none';
+            
+            // Manejar errores de carga
+            img.onerror = function() {
+                img.style.display = 'none';
+                fallback.style.display = 'flex';
+            };
+            
+            img.onload = function() {
+                fallback.style.display = 'none';
+                img.style.display = 'block';
+            };
+            
+            container.appendChild(fallback);
+            container.appendChild(img);
+            
+            return container;
+        }
 
         // Modal functions
         function openModal(projectId) {
@@ -543,19 +633,17 @@
             document.getElementById('modalDescription').textContent = project.description;
             document.getElementById('modalResults').textContent = project.results;
 
-            // Update gallery
+            // Update gallery with real images
             const gallery = document.getElementById('modalGallery');
             gallery.innerHTML = '';
-            project.images.forEach(img => {
-                const imageDiv = document.createElement('div');
-                imageDiv.className = `h-48 bg-gradient-to-br from-${img.from} to-${img.to} rounded-xl flex items-center justify-center`;
-                imageDiv.innerHTML = `
-                    <div class="text-center text-white">
-                        <i class="${img.icon} text-3xl mb-2"></i>
-                        <p class="text-sm opacity-80">Imagen del proyecto</p>
-                    </div>
-                `;
-                gallery.appendChild(imageDiv);
+            project.images.forEach((imageUrl, index) => {
+                const imageContainer = createImageElement(
+                    imageUrl, 
+                    project.fallbackColor, 
+                    `${project.title} - Imagen ${index + 1}`, 
+                    'h-48 rounded-xl'
+                );
+                gallery.appendChild(imageContainer);
             });
 
             // Update process
@@ -586,8 +674,7 @@
                 techDiv.appendChild(techSpan);
             });
 
-            // Update action buttons
-            document.getElementById('modalCodeBtn').style.display = project.hasCode ? 'block' : 'none';
+     
 
             // Show modal
             const modal = document.getElementById('projectModal');
@@ -655,7 +742,6 @@
             
             Object.keys(projectData).forEach((projectId, index) => {
                 const project = projectData[projectId];
-                const mainImage = project.images[0]; // Use first image as main
                 
                 // Get color for tech tags
                 const getTagColors = (tech) => {
@@ -681,15 +767,18 @@
                 
                 const projectCard = document.createElement('div');
                 projectCard.className = 'project-card bg-white rounded-2xl border shadow-lg overflow-hidden cursor-pointer';
+                
+                // Crear contenedor de imagen principal
+                const imageContainer = createImageElement(
+                    project.images[0], 
+                    project.fallbackColor, 
+                    project.title, 
+                    'project-image w-full h-48'
+                );
+                
                 projectCard.innerHTML = `
                     <div class="relative overflow-hidden">
-                        <div class="project-image w-full h-48 bg-gradient-to-br from-${mainImage.from} to-${mainImage.to} flex items-center justify-center">
-                            <div class="text-center text-white">
-                                <i class="${project.icon} text-3xl mb-2"></i>
-                                <p class="text-sm opacity-80">Imagen del proyecto</p>
-                            </div>
-                        </div>
-                        <div class="absolute top-4 right-4">
+                        <div class="absolute top-4 right-4 z-10">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-medium text-gray-700">
                                 ${project.category}
                             </span>
@@ -715,6 +804,10 @@
                         </div>
                     </div>
                 `;
+                
+                // Insertar imagen al principio del contenedor relativo
+                const relativeContainer = projectCard.querySelector('.relative');
+                relativeContainer.insertBefore(imageContainer, relativeContainer.firstChild);
                 
                 // Add click event
                 projectCard.addEventListener('click', () => {
