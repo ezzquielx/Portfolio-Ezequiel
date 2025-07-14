@@ -288,18 +288,6 @@
             window.location.href = 'contact.html';
         });
 
-        // Social media links
-        document.querySelectorAll('.social-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                if (icon.classList.contains('fa-linkedin-in')) {
-                    window.open('https://linkedin.com/in/tu-perfil', '_blank');
-                } else if (icon.classList.contains('fa-github')) {
-                    window.open('https://github.com/tu-usuario', '_blank');
-                }
-            });
-        });
-
         // Navigation functionality
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
@@ -350,6 +338,6 @@
                 }, index * 100);
             });
         });
-
-        // Contact links functionality
-        document.querySelectorAll('#contact-section .flex').forEach
+    </script>
+</body>
+</html>
